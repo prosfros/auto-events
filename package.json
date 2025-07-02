@@ -1,16 +1,17 @@
 {
   "name": "auto-events",
-  "homepage": "https://prosfros.github.io/auto-events",
+  "homepage": "https://prosfros.github.io/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "cra-template-pwa": "2.0.0",
-    "framer-motion": "^12.22.0",
+    "framer-motion": "^12.23.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.3",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.9.3",
+    "react-tsparticles": "^2.12.2",
     "web-vitals": "^5.0.3"
   },
   "scripts": {
@@ -20,7 +21,6 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
-
   },
   "eslintConfig": {
     "extends": [

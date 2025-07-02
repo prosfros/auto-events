@@ -23,7 +23,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 60 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="mb-24"
+        className="mb-12"
       >
         <h1
           className="
@@ -31,10 +31,16 @@ export default function Hero() {
             font-extrabold
             italic
             text-6xl
-            text-center 
+            text-center
             px-4
-            text-black
-            animate-pulse
+            bg-gradient-to-r
+            from-red-500
+            via-red-600
+            to-red-700
+            bg-clip-text
+            text-transparent
+            animate-gradient-x
+            leading-relaxed
             mt-8
           "
           style={{
@@ -52,7 +58,7 @@ export default function Hero() {
         transition={{ duration: 0.8 }}
         className="mb-16"
       >
-        <div className="relative rounded-2xl p-[2px] overflow-hidden">
+        <div className="relative rounded-2xl p-[2px] overflow-hidden shadow-lg">
           <div className="relative z-10 bg-white text-black rounded-2xl p-8 shadow-lg max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-4 text-center">Добро пожаловать!</h2>
             <p className="text-gray-700 text-center">
@@ -70,7 +76,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: i * 0.2 }}
-            className="bg-white rounded-2xl shadow-md p-6 w-full md:w-1/3"
+            className="bg-white rounded-2xl shadow-lg p-6 w-full md:w-1/3 transform transition duration-300 hover:-translate-y-2"
           >
             <h3 className="text-lg font-bold text-blue-800 mb-2">{card.title}</h3>
             <p className="text-gray-700">{card.desc}</p>
@@ -78,14 +84,21 @@ export default function Hero() {
         ))}
       </div>
       <motion.div>
-        <p className="mt-7 text-lg max-w-2xl mx-auto text-gray-800">
+        <p className="mt-7 text-lg max-w-2xl mx-auto text-gray-800 text-center">
           Создавайте уникальные события, объединяйте автолюбителей и управляйте встречами — всё прямо из Telegram.
+          <br />
+          <br />
+          <span className="block">
+            Запустите своё первое автомобильное событие вместе с нашим Telegram-ботом уже сегодня.
+          </span>
+          ↓↓↓
         </p>
+
         <a
           href="https://t.me/your_autobot"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-8 inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition"
+          className="mt-1 inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition"
         >
           Перейти в бота
         </a>
