@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import HubBackground from "../components/HubBackground"
 
 export default function Hero() {
   const features = [
@@ -18,7 +19,8 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative min-h-screen w-full flex flex-col items-center justify-start text-center px-6 bg-white py-20">
+    <section className="relative min-h-screen w-full flex flex-col items-center justify-start text-center px-6 py-20">
+      <HubBackground />
       <motion.div
         initial={{ opacity: 0, y: 60 }}
         animate={{ opacity: 1, y: 0 }}
@@ -59,7 +61,7 @@ export default function Hero() {
         className="mb-16"
       >
         <div className="relative rounded-2xl p-[2px] overflow-hidden shadow-lg">
-          <div className="relative z-10 bg-white text-black rounded-2xl p-8 shadow-lg max-w-3xl mx-auto">
+          <div className="relative z-10 bg-white/90 text-black rounded-2xl p-8 shadow-lg max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-4 text-center">Добро пожаловать!</h2>
             <p className="text-gray-700 text-center">
               Наш Telegram-бот поможет вам легко создавать мероприятия, регистрировать автомобили и управлять заявками. Всё просто, удобно и интуитивно понятно.
@@ -76,17 +78,16 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: i * 0.2 }}
-            className="bg-white rounded-2xl shadow-lg p-6 w-full md:w-1/3 transform transition duration-300 hover:-translate-y-2"
+            className="bg-white/85 rounded-2xl shadow-lg p-6 w-full md:w-1/3 transform transition duration-300 hover:-translate-y-2"
           >
-            <h3 className="text-lg font-bold text-blue-800 mb-2">{card.title}</h3>
-            <p className="text-gray-700">{card.desc}</p>
+            <h3 className="neon-blue text-lg font-bold text-blue-900 mb-2">{card.title}</h3>
+            <p className="neon-blue text-black">{card.desc}</p>
           </motion.div>
         ))}
       </div>
       <motion.div>
-        <p className="mt-7 text-lg max-w-2xl mx-auto text-gray-800 text-center">
+        <p className="mt-7 text-lg max-w-2xl mx-auto text-white text-center">
           Создавайте уникальные события, объединяйте автолюбителей и управляйте встречами — всё прямо из Telegram.
-          <br />
           <br />
           <span className="block">
             Запустите своё первое автомобильное событие вместе с нашим Telegram-ботом уже сегодня.

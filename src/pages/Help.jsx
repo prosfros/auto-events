@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import HelpBackground from '../components/HelpBackground';
 
 const rawTopics = {
   'Регистрация в боте': `1. Откройте Telegram и перейдите по ссылке в бота.\n2. Нажмите кнопку "Начать"("Start").\n3. Введите своё имя и фамилию.\n4. Подтвердите регистрацию.`,
@@ -23,9 +24,10 @@ export default function Help() {
 
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center text-white py-20 px-4 md:px-10"
+      className="relative min-h-screen flex items-center justify-center text-gray-900 py-20 px-4 md:px-10"
     >
-      <div className="w-full max-w-6xl flex flex-col md:flex-row gap-10 relative z-10 rounded-xl p-6">
+      <HelpBackground />
+      <div className="w-full max-w-6xl flex flex-col md:flex-row gap-10 relative z-10 rounded-xl p-6 bg-white bg-opacity-90">
         {/* Список тем */}
         <div className="md:w-1/3 space-y-4">
           {Object.entries(topics).map(([slug, { title }]) => (
@@ -34,8 +36,8 @@ export default function Help() {
               onClick={() => handleSelect(slug)}
               className={`w-full text-left px-5 py-3 rounded-lg border-2 transition-all duration-300 ${
                 selected === slug
-                  ? 'border-blue-500 text-white shadow-md'
-                  : 'border-gray-600 hover:bg-gray-700'
+                  ? 'border-blue-500 text-black shadow-md'
+                  : 'border-gray-600 hover:bg-blue-200'
               }`}
             >
               {title}

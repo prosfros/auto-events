@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx}"],
   theme: {
     extend: {
+      boxShadow: {
+        'neon-blue': '0 0 5px #4f46e5, 0 0 10px #4f46e5, 0 0 20px #4f46e5',
+      },
       animation: {
       'spin-slow': 'spin 15s linear infinite',
       'border': 'gradient-border 10s ease infinite',
