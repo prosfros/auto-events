@@ -15,6 +15,8 @@ const topics = Object.fromEntries(
 );
 
 export default function MobileHelp() {
+  const [selected, setSelected] = useState("регистрация-в-боте");
+
   const handleSelect = (slug) => {
     setSelected(slug);
   };
