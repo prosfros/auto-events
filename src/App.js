@@ -3,9 +3,10 @@ import { Routes, Route } from 'react-router-dom';
 import useDeviceType from './hooks/useDeviceType';
 
 import Header from './components/Header';
-import Hero from './pages/PCHero';
-import MobileHero from './pages/MobileHero';
-import Help from './pages/Help';
+import Hero from './pages/hub/PCHero';
+import MobileHero from './pages/hub/MobileHero';
+import Help from './pages/help/PCHelp';
+import MobileHelp from './pages/help/MobileHelp';
 
 function App() {
   const device = useDeviceType();
@@ -21,7 +22,12 @@ function App() {
               device === "mobile" ? <MobileHero /> : <Hero />
             }
           />
-          <Route path="/help" element={<Help />} />
+          <Route 
+            path="/help" 
+            element={
+              device === "mobile" ? <MobileHelp /> : <Help/>
+            } 
+          />
           <Route path="/about" element={<Help />} />
           <Route path="/profile" element={<Help />} />
         </Routes>
