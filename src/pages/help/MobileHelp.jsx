@@ -23,9 +23,13 @@ export default function MobileHelp() {
 
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-50 to-white text-gray-900 py-10 px-4"
+      className="
+        relative min-h-screen flex items-center justify-center
+        bg-gradient-to-b from-black via-gray-900 to-black
+        text-gray-100 py-10 px-4
+      "
     >
-      <div className="w-full max-w-4xl flex flex-col gap-6 relative z-10 rounded-xl p-4 bg-white shadow-lg">
+      <div className="w-full max-w-4xl flex flex-col gap-6 relative z-10 rounded-xl p-4 bg-white/90 shadow-lg">
         {/* Список тем */}
         <div className="flex flex-col space-y-3">
           {Object.entries(topics).map(([slug, { title }]) => (
@@ -35,7 +39,7 @@ export default function MobileHelp() {
               className={`w-full text-left px-4 py-3 rounded-lg border-2 transition-all duration-300 text-base ${
                 selected === slug
                   ? "border-blue-500 text-black shadow"
-                  : "border-gray-400 hover:bg-blue-100"
+                  : "border-gray-400 hover:bg-blue-100 text-black"
               }`}
             >
               {title}
@@ -52,9 +56,11 @@ export default function MobileHelp() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.4 }}
-              className="border border-gray-300 p-5 rounded-lg bg-white shadow whitespace-pre-line"
+              className="border border-gray-300 p-5 rounded-lg bg-white/95 shadow whitespace-pre-line text-black"
             >
-              <h2 className="text-xl font-bold mb-3 text-blue-500">{topics[selected].title}</h2>
+              <h2 className="text-xl font-bold mb-3 text-blue-500">
+                {topics[selected].title}
+              </h2>
               <p className="text-sm">{topics[selected].content}</p>
             </motion.div>
           </AnimatePresence>
