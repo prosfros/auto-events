@@ -4,7 +4,8 @@ export default function Header() {
   const navItems = [
     { label: "Главная", to: "/" },
     { label: "Инструкция", to: "/help" },
-    { label: "Лицензия", to: "/license" },
+    { label: "О нас", to: "/about" },
+    { label: "Профиль", to: "/profile" },
   ];
 
   return (
