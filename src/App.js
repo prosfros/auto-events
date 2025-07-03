@@ -1,10 +1,8 @@
-// src/App.js
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
 import Hero from './pages/Hero';
-import License from './components/License';
 import Help from './pages/Help';
 
 
@@ -16,9 +14,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/help" element={<Help />} />
+          <Route path="/about" element={<Help />} />
+          <Route path="/profile" element={<Help />} />
+          
         </Routes>
       </main>
-      <License />
     </div>
   );
 }
