@@ -17,7 +17,7 @@ export default function HelpBackground() {
         zIndex: -1,
       }}
     >
-      <source src="/Backgrounds/help1.realesrgan.mp4" type="video/mp4" />
+      <source src={"${process.env.PUBLIC_URL}/Backgrounds/help1.realesrgan.mp4"} type="video/mp4" />
       {/* Можно добавить альтернативные форматы, если нужно */}
       Ваш браузер не поддерживает видео.
     </video>
