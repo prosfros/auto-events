@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import HelpBackground from '../components/HelpBackground';
+import HelpBackground from '../../components/HelpBackground';
 
 const rawTopics = {
   'Регистрация в боте': `1. Откройте Telegram и перейдите по ссылке в бота.\n2. Нажмите кнопку "Начать"("Start").\n3. Введите своё имя и фамилию.\n4. Подтвердите регистрацию.`,
