@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import useDeviceType from './hooks/useDeviceType';
 
 import Header from './components/Header';
-import Hero from './pages/Hero';
+import Hero from './pages/PCHero';
 import MobileHero from './pages/MobileHero';
 import Help from './pages/Help';
 
