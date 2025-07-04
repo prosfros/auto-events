@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 
-export default function HubBackground({ onLoaded }) {
+export default function HelpBackground({ onLoaded }) {
   const videoRef = useRef(null);
 
   useEffect(() => {
