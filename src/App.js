@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className="bg-black text-white min-h-screen flex flex-col relative overflow-hidden">
-      <Header />
+      element={device === "mobile" ? <MobileHeader /> : <Header />}
       <main className="flex-grow relative z-10">
         <Routes>
           <Route
