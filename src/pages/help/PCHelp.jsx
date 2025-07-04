@@ -1,4 +1,3 @@
-// Вверху файла
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import HelpBackground from "../../components/HelpBackground";
@@ -20,27 +19,29 @@ export default function Help() {
 
   const [selected, setSelected] = useState("регистрация-в-боте");
   const [isLoaded, setIsLoaded] = useState(false);
-  const [displayedText, setDisplayedText] = useState("");
-  const [isTyping, setIsTyping] = useState(false);
+  const [charIndex, setCharIndex] = useState(0);
 
-  // При смене темы — начинаем печатать сначала
+  // При смене темы — сбрасываем индекс
   useEffect(() => {
+    setCharIndex(0);
     const fullText = topics[selected].content;
-    setDisplayedText("");
-    setIsTyping(true);
-    let i = 0;
 
     const interval = setInterval(() => {
-      setDisplayedText((prev) => prev + fullText[i]);
-      i++;
-      if (i >= fullText.length) {
-        clearInterval(interval);
-        setIsTyping(false);
-      }
-    }, 20);
+      setCharIndex((prev) => {
+        if (prev >= fullText.length) {
+          clearInterval(interval);
+          return prev;
+        }
+        return prev + 1;
+      });
+    }, 15);
 
     return () => clearInterval(interval);
   }, [selected]);
+
+  const fullText = topics[selected].content;
+  const displayedText = fullText.slice(0, charIndex);
+  const isTyping = charIndex < fullText.length;
 
   return (
     <section className="relative min-h-screen flex items-center justify-center text-gray-900 py-20 px-4 md:px-10">
