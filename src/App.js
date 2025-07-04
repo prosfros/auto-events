@@ -1,8 +1,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import useDeviceType from './hooks/useDeviceType';
-
 import Header from './components/Header';
+import MobileHeader from './components/MobileHeader';
 import Hero from './pages/hub/PCHero';
 import MobileHero from './pages/hub/MobileHero';
 import Help from './pages/help/PCHelp';

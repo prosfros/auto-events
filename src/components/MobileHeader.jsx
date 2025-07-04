@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function Header() {
+export default function MobileHeader() {
   const navItems = [
     { label: "Главная", to: "/" },
     { label: "Инструкция", to: "/help" },
