@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "./logo.png"; // путь к твоему логотипу
+import logo from "./logo-white.png"; // путь к твоему логотипу
 
 export default function Header() {
   const navItems = [
