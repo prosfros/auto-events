@@ -1,8 +1,35 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 
-export default function HubBackground() {
+export default function HubBackground({ onLoaded }) {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleLoaded = () => {
+      console.log('✅ Видео загрузилось');
+      if (onLoaded) onLoaded();
+    };
+
+    video.addEventListener('loadeddata', handleLoaded);
+    // на всякий случай — дублируем ещё одно событие
+    video.addEventListener('canplay', handleLoaded);
+
+    // Если видео уже готово (например, из кеша), вызываем сразу
+    if (video.readyState >= 3) {
+      handleLoaded();
+    }
+
+    return () => {
+      video.removeEventListener('loadeddata', handleLoaded);
+      video.removeEventListener('canplay', handleLoaded);
+    };
+  }, [onLoaded]);
+
   return (
     <video
+      ref={videoRef}
       autoPlay
       loop
       muted
@@ -18,7 +45,6 @@ export default function HubBackground() {
       }}
     >
       <source src={process.env.PUBLIC_URL + "/Backgrounds/hub1.mp4"} type="video/mp4" />
-      {/* Можно добавить альтернативные форматы, если нужно */}
       Ваш браузер не поддерживает видео.
     </video>
   );
