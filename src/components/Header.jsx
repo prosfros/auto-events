@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "./logo.png"; // путь к твоему логотипу
 
 export default function Header() {
   const navItems = [
@@ -9,8 +10,18 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-black/60 backdrop-blur text-white shadow">
-      <div className="w-full py-4 pr-4 flex justify-end gap-2">
+    <header className="fixed top-0 left-0 w-full z-50 bg-black/60 backdrop-blur text-white shadow flex justify-between items-start">
+      {/* Логотип слева сверху */}
+      <div className="p-3">
+        <img
+          src={logo}
+          alt="Логотип"
+          className="h-10 w-auto"
+        />
+      </div>
+
+      {/* Кнопки справа */}
+      <nav className="flex gap-2 p-3">
         {navItems.map((item) => (
           <Link
             key={item.to}
@@ -20,7 +31,7 @@ export default function Header() {
             {item.label}
           </Link>
         ))}
-      </div>
+      </nav>
     </header>
   );
 }
