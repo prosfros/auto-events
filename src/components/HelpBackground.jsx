@@ -8,15 +8,13 @@ export default function HelpBackground({ onLoaded }) {
     if (!video) return;
 
     const handleLoaded = () => {
-      console.log('✅ Видео загрузилось');
+      console.log('✅ HelpBackground video loaded');
       if (onLoaded) onLoaded();
     };
 
     video.addEventListener('loadeddata', handleLoaded);
-    // на всякий случай — дублируем ещё одно событие
     video.addEventListener('canplay', handleLoaded);
 
-    // Если видео уже готово (например, из кеша), вызываем сразу
     if (video.readyState >= 3) {
       handleLoaded();
     }
