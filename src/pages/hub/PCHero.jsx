@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Loader from "../../components/Loader";
 import HubBackground from "../../components/HubBackground";
-import pngIcon from "./tg-icon.png";
-import gifIcon from "./tg-icon.gif";
+import pngIcon from "./icons/tg-icon.png";
+import gifIcon from "./icons/tg-icon.gif";
+import emojiIcon from "./icons/emojiIcon.gif";
 
 export default function Hero() {
   const [hovered, setHovered] = useState(false);
@@ -34,6 +35,7 @@ export default function Hero() {
       >
         <HubBackground onLoaded={() => setIsLoaded(true)} />
 
+        {/* Заголовок */}
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
@@ -62,7 +64,6 @@ export default function Hero() {
           >
             Автомероприятия с Telegram-ботом
           </h1>
-
         </motion.div>
 
         {/* Добро пожаловать */}
@@ -72,32 +73,54 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <div className="
-            max-w-3xl
-            mx-auto
-            p-1
-            rounded-2xl
-            bg-gradient-to-r
-            from-red-500
-            via-orange-500
-            to-yellow-500
-            shadow-lg
+          <div
+            className="
+              max-w-3xl
+              mx-auto
+              p-1
+              rounded-2xl
+              bg-gradient-to-r
+              from-red-500
+              via-orange-500
+              to-yellow-500
+              shadow-lg
             "
           >
-            <div className="
-              bg-white/90
-              text-black
-              rounded-2xl
-              p-8
+            <div
+              className="
+                bg-white/80
+                text-black
+                rounded-2xl
+                p-8
+                flex
+                flex-col
+                items-center
               "
             >
-              <h2 className="text-3xl font-bold mb-4 text-center">Добро пожаловать!</h2>
-              <p className="text-Black text-center">
-                Наш Telegram-бот поможет вам легко создавать мероприятия, регистрировать автомобили и управлять заявками. Всё просто, удобно и интуитивно понятно.
+              {/* Заголовок с двумя иконками по бокам */}
+              <div className="flex items-center gap-3 mb-4">
+                <img
+                  src={emojiIcon}
+                  alt="emoji-left"
+                  className="w-8 h-8"
+                />
+                <h2 className="text-3xl font-bold text-center">
+                  Добро пожаловать!
+                </h2>
+                <img
+                  src={emojiIcon}
+                  alt="emoji-right"
+                  className="w-8 h-8"
+                />
+              </div>
+
+              <p className="text-black text-center">
+                Наш Telegram-бот поможет вам легко создавать мероприятия,
+                регистрировать автомобили и управлять заявками. Всё просто,
+                удобно и интуитивно понятно.
               </p>
             </div>
           </div>
-
         </motion.div>
 
         {/* Карточки */}
@@ -108,7 +131,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.2 }}
-              className="    
+              className="
                 bg-gradient-to-br
                 from-pink-100
                 to-purple-200
@@ -134,7 +157,6 @@ export default function Hero() {
                   transition
                   duration-300
                 "
-
               >
                 {card.title}
               </h3>
@@ -142,18 +164,22 @@ export default function Hero() {
             </motion.div>
           ))}
         </div>
+
+        {/* Призыв и кнопка */}
         <motion.div>
-          <p className="
-            mt-7
-            text-lg
-            max-w-2xl
-            mx-auto
-            text-center
-            text-white
-            drop-shadow-[0_0_6px_rgba(255,255,255,0.8)]
-            drop-shadow-[0_0_10px_rgba(255,255,255,0.6)]
-            drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]
-          ">
+          <p
+            className="
+              mt-7
+              text-lg
+              max-w-2xl
+              mx-auto
+              text-center
+              text-white
+              drop-shadow-[0_0_6px_rgba(255,255,255,0.8)]
+              drop-shadow-[0_0_10px_rgba(255,255,255,0.6)]
+              drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]
+            "
+          >
             Создавайте уникальные события, объединяйте автолюбителей и управляйте встречами — всё прямо из Telegram.
             <br />
             <span className="block">
@@ -166,7 +192,7 @@ export default function Hero() {
             href="https://t.me/your_autobot"
             target="_blank"
             rel="noopener noreferrer"
-            className="    
+            className="
               mt-3
               inline-flex
               items-center
@@ -197,7 +223,7 @@ export default function Hero() {
                 hovered ? "w-10 h-10" : "w-5 h-5"
               }`}
             />
-               Перейти в бота   
+            Перейти в бота
           </a>
         </motion.div>
       </section>
