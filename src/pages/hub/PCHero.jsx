@@ -126,20 +126,13 @@ export default function Hero() {
             >
               <h3
                 className="
-                  text-lg
-                  font-extrabold
+                  text-xl
+                  font-semibold
                   mb-2
-                  bg-gradient-to-r
-                  from-red-500
-                  via-orange-400
-                  via-purple-500
-                  to-yellow-400
-                  bg-clip-text
-                  text-transparent
-                  drop-shadow-[0_0_8px_rgba(0,0,0,0.5)]
+                  text-gray-800
+                  hover:text-blue-600
                   transition
                   duration-300
-                  hover:drop-shadow-[0_0_10px_rgba(0,0,0,0.5)]
                 "
 
               >

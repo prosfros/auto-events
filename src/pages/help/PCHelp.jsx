@@ -58,7 +58,7 @@ export default function Help() {
                 className={`w-full text-left px-5 py-3 rounded-lg border-2 transition-all duration-300 ${
                   selected === slug
                     ? "border-blue-500 text-black shadow-md"
-                    : "border-gray-600 hover:bg-blue-200"
+                    : "border-gray-600 hover:bg-gray-300"
                 }`}
               >
                 {title}
@@ -75,7 +75,7 @@ export default function Help() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4 }}
-                className="border border-gray-600 p-6 rounded-xl shadow-lg whitespace-pre-line font-mono relative"
+                className="leading-relaxed border border-gray-600 p-6 rounded-xl shadow-lg whitespace-pre-line relative italic"
               >
                 <h2 className="text-2xl font-bold mb-4 text-blue-400">
                   {topics[selected].title}
