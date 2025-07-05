@@ -8,6 +8,7 @@ import MobileHero from './pages/hub/MobileHero';
 import Help from './pages/help/PCHelp';
 import MobileHelp from './pages/help/MobileHelp';
 import About from './pages/about/About';
+import Loader from './components/Loader';
 
 function App() {
   const device = useDeviceType();
@@ -30,7 +31,7 @@ function App() {
             } 
           />
           <Route path="/about" element={<About />} />
-          <Route path="/profile" element={<Help />} />
+          <Route path="/profile" element={<Loader />} />
         </Routes>
       </main>
     </div>
